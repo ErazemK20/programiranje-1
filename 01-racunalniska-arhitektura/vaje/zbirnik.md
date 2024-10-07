@@ -5,11 +5,24 @@ Pri vseh nalogah se vam pod razdelkom **RAM** splača nastaviti _View_ na _Decim
 ## Računanje ostanka
 
 Zapišite program, ki v register `A` zapiše ostanek pri deljenju registra `A` z registrom `B`.
-
+MOV A,x;
+MOV B,y;
+MOV C,A;
+DIV B;
+MUL B;
+SUB C,A;
+MOV A,C
+MOV B,0
+MOV C,0	
 ## Zaporedna števila
 
 Zapišite program, ki na sklad zaporedno postavlja števila od 13 do 42.
-
+MOV A,13;
+kekc:
+ADD A,1
+PUSH A
+JNZ kekc
+JMP A,42
 ## Menjava pomnilniških celic
 
 Poleg registrov in sklada lahko podatke shranjujemo tudi v pomnilniške celice. To storimo prek naslovov oblike `[N]`, kjer je `N` zaporedni indeks mesta v pomnilniku, ali `[R]`, kjer je `R` ime registra, v katerem je shranjen indeks. Zapišite program, ki zamenja vsebini pomnilniških celic na naslovih `[A]` in `[B]`.
